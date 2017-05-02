@@ -5,8 +5,6 @@ export DATA_PATH=/home/experimentos/CORPORA/KAGGLE/EPILEPSY_PREDICTION/
 export TMP_PATH=TMP
 # Models training path
 export MODELS_PATH=MODELS
-# Submissions results path
-export SUBMISSIONS_PATH=SUBMISSIONS
 # Indicate which mask use to distinguish test data from holdout data
 export TEST_MASK="*test*"
 # Indicate if compiling with MKL or not
@@ -46,10 +44,7 @@ if [[ ! -d $MODELS_PATH ]]; then
     echo "The indicated tmp path $MODELS_PATH is not a folder"
     exit 10
 fi
-if [[ ! -d $SUBMISSIONS_PATH ]]; then
-    echo "The indicated submissions path $SUBMISSIONS_PATH is not a folder"
-    exit 10
-fi
+
 if [[ -z $SUBJECTS ]]; then
     echo "The indicated data path doesn't contain any subject subfolder"
     exit 10
