@@ -28,8 +28,8 @@ if [[ $# != 1 ]]; then
     exit 10
 fi
 
-KNN_PBF_CONF=scripts/MODELS/confs/knn-fft.lua
-KNN_DS_CONF=scripts/MODELS/confs/knn-fft.lua
+KNN_PBF_CONF=scripts/MODELS/confs/knn-pbf.lua
+KNN_DS_CONF=scripts/MODELS/confs/knn-ds.lua
 
 TRAIN_ALL_SCRIPT=scripts/MODELS/train_all_subjects_wrapper.lua
 KNN_TRAIN_SCRIPT=scripts/MODELS/train_one_subject_knn.lua

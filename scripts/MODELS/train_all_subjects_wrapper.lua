@@ -2,7 +2,7 @@
   This file is part of ESAI-CEU-UCH/supervised-filters (https://github.com/ESAI-CEU-UCH/supervised-filters)
   
   Copyright (c) 2014, ESAI, Universidad CEU Cardenal Herrera,
-  (F. Zamora-Martínez, F. Muñoz-Malmaraz, P. Botella-Rocamora, J. Pardo)
+  (F. Zamora-Martínez, F. Muñoz-Almaraz, P. Botella-Rocamora, J. Pardo)
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
