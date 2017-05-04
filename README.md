@@ -22,7 +22,8 @@ This solution uses the following open source software:
 
 - [APRIL-ANN](https://github.com/pakozm/april-ann) toolkit v0.4.0. It is a
   toolkit for pattern recognition with Lua and C/C++ core. Because this tool is
-  very new, the installation and configuration has been written in the pipeline.
+  very new, the installation and configuration has been written in the
+  pipeline. It is also necessary to install the library [PARXE](https://github.com/april-org/parxe).
 - [R project](http://www.r-project.org/) v3.0.2. For statistical computing, a
   wide spread tool in Kaggle competitions. Packages R.matlab, MASS, fda.usc,
   fastICA, stringr and plyr are necessary to run the solution.
