@@ -128,3 +128,13 @@ receives as argument the name of the subject:
 ```
 $ ./train_subject.sh SUBJECT_NAME
 ```
+## Recipe to train all the subjects and compare results
+
+In order to train all the subjects in the list, you can use
+`trainandCompare.sh` script, the final outputs are confidence
+intervals of AUC for every subject and a comparison between
+`KNN_PBF_RESULTS` and `KNN_DS_RESULTS` 
+
+```
+$ ./trainandCompare.sh 
+``
