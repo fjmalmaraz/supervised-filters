@@ -5,6 +5,8 @@ performance. These scripts are based on the [solution proposed by Universidad CE
 (ESAI-CEU-UCH)](https://github.com/ESAI-CEU-UCH/kaggle-epilepsy) at Kaggle American Epilepsy Society Seizure Prediction
 Challenge. The proposed solution was positioned as **4th (3rd prize)** at
 [Kaggle competition](https://www.kaggle.com/c/seizure-prediction).
+Further information about this competition and main results can be
+found in [(Brinkmann, B.H. et al. (2016))][1]
 
 These scripts allow a comparison between raw features using
 conventional techniques and the features preprocessed with DS filter.
@@ -138,4 +140,18 @@ intervals of AUC for every subject and a comparison between
 
 ```
 $ ./trainandCompare.sh 
-``
+```
+
+## Acknowledgement
+
+We thank the competition organizers for providing the dataset to
+perform this study, espacially, for the file
+[answer_key.csv](answer_key.csv), which allowed us to compare the
+different individuals and methods. 
+
+
+## References
+
+[1]: Brinkmann, B. H. et al.  (2016). Crowdsourcing reproducible
+seizure forecasting in human and canine epilepsy. *Brain*, 139(6),
+1713-1722. <https://doi.org/10.1093/brain/aww045>
