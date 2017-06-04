@@ -6,7 +6,7 @@ performance. These scripts are based on the [solution proposed by Universidad CE
 Challenge. The proposed solution was positioned as **4th (3rd prize)** at
 [Kaggle competition](https://www.kaggle.com/c/seizure-prediction).
 Further information about this competition and main results can be
-found in [(Brinkmann, B.H. et al. (2016))][1]
+found in [(Brinkmann, B.H. et al.,2016)](https://doi.org/10.1093/brain/aww04)
 
 These scripts allow a comparison between raw features using
 conventional techniques and the features preprocessed with DS filter.
@@ -139,7 +139,7 @@ intervals of AUC for every subject and a comparison between
 `KNN_PBF_RESULTS` and `KNN_DS_RESULTS` 
 
 ```
-$ ./trainandCompare.sh 
+$ ./trainandcompare.sh 
 ```
 
 ## Acknowledgement
@@ -152,6 +152,6 @@ different individuals and methods.
 
 ## References
 
-[1]: Brinkmann, B. H. et al.  (2016). Crowdsourcing reproducible
+Brinkmann, B. H. et al.  (2016). Crowdsourcing reproducible
 seizure forecasting in human and canine epilepsy. *Brain*, 139(6),
-1713-1722. <https://doi.org/10.1093/brain/aww045>
+1713-1722 <https://doi.org/10.1093/brain/aww045>
