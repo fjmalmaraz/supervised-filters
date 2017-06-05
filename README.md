@@ -11,10 +11,6 @@ found in [(Brinkmann, B.H. et al.,2016)](https://doi.org/10.1093/brain/aww045)
 These scripts allow a comparison between raw features using
 conventional techniques and the features preprocessed with DS filter.
 
-It is important to note that **any** of the proposed systems use test set for
-calibration. The competition allow to do this model calibration using test set,
-but doing it will reduce the reproducibility of the results in a real world
-implementation.
 
 # Dependencies
 
@@ -121,7 +117,7 @@ The trained systems are stored at folders:
 
 
 Finally, confidence interval for AUC and a comparison of the AUC
-values using hypothesis testing are perform.
+values using hypothesis testing are performed.
 
 ## Recipe to train a new subject
 

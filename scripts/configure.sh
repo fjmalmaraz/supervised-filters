@@ -89,6 +89,7 @@ if [[ -z $APRIL_EXEC || $APRIL_EXEC = "" || ! -e $APRIL_EXEC ]]; then
             cleanup
             exit 10
         fi
+        sudo apt-get install libopenblas-dev
         . configure.sh
         if [[ $USE_MKL == 0 ]]; then
             if ! make release-atlas; then
