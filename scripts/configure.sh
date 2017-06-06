@@ -32,7 +32,7 @@
 #    exit 10
 #fi
 
-VERSION=0.4.0
+VERSION=0.4.1
 APRILANN=april-ann-$VERSION
 
 cleanup()
@@ -40,7 +40,7 @@ cleanup()
     echo "CLEANING UP, PLEASE WAIT UNTIL FINISH"
     cd $ROOT_PATH
     rm -Rf $TMP_PATH/$APRILANN
-    md5sum --quiet -c $ROOT_PATH/scripts/v0.4.0.md5
+    md5sum --quiet -c $ROOT_PATH/scripts/v$VERSION.md5
     if [[ $? -ne 0 ]]; then
         rm -f $TMP_PATH/v$VERSION.tar.gz
     fi
@@ -63,10 +63,10 @@ if [[ -z $APRIL_EXEC || $APRIL_EXEC = "" || ! -e $APRIL_EXEC ]]; then
     if [[ ! -e $TMP_PATH/$APRILANN ]]; then
         cd $TMP_PATH
         # check if source code has been downloaded
-        if [[ ! -e v0.4.0.tar.gz ]]; then
+        if [[ ! -e v$VERSION.tar.gz ]]; then
             echo "Downloading APRIL-ANN tarball"
-            wget https://github.com/pakozm/april-ann/archive/v0.4.0.tar.gz
-            cd $ROOT_PATH && md5sum --quiet -c scripts/v0.4.0.md5 && cd $TMP_PATH
+            wget https://github.com/pakozm/april-ann/archive/v$VERSION.tar.gz
+            cd $ROOT_PATH && md5sum --quiet -c scripts/v$VERSION.md5 && cd $TMP_PATH
             if [[ $? -ne 0 ]]; then
                 echo "ERROR: Unable to check md5sum of downloaded APRIL-ANN tarball"
                 cleanup
@@ -74,11 +74,12 @@ if [[ -z $APRIL_EXEC || $APRIL_EXEC = "" || ! -e $APRIL_EXEC ]]; then
             fi
         fi
         echo "Unpacking APRIL-ANN tarball"
-        if ! tar zxf v0.4.0.tar.gz; then
+        if ! tar zxf v$VERSION.tar.gz; then
             echo "ERROR: Unable to unpack APRIL-ANN tarball"
             cleanup
             exit 10
         fi
+	git clone https://github.com/april-org/luapkg.git $APRILANN/luapkg
         echo "Instaling dependencies and compiling APRIL-ANN"
         cd $APRILANN
         # compilation process, if any error happens, the whole directory will be
@@ -131,3 +132,22 @@ cd $ROOT_PATH
 
 echo "Configuring and installing R packages"
 Rscript scripts/configure.R
+
+echo "Installing PARXE and Xemsg"
+sudo mkdir -p /usr/local/lib/lua/5.2/
+sudo mkdir -p /usr/lib/lua/5.2/
+
+sudo apt-get install libnanomsg-dev &&
+
+cd $ROOT_PATH/$TMP_PATH &&
+git clone https://github.com/pakozm/xemsg.git
+
+cd xemsg &&
+make &&
+sudo make install &&
+
+cd $ROOT_PATH/$TMP_PATH &&
+git clone https://github.com/april-org/parxe.git
+
+cd parxe &&
+sudo cp -R parxe /usr/local/lib/lua/5.2/
