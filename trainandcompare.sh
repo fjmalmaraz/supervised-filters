@@ -122,6 +122,6 @@ if ! train_knn_DS $KNN_DS_CONF $KNN_DS_RESULT; then
     exit 10
 fi
 
-$APRIL_EXEC ./scripts/measureAUC.lua $KNN_PBF_RESULT/test.txt
-$APRIL_EXEC ./scripts/measureAUC.lua $KNN_DS_RESULT/test.txt
-$APRIL_EXEC ./scripts/measureAUC.lua $KNN_PBF_RESULT/test.txt $KNN_DS_RESULT/test.txt
+$APRIL_EXEC ./scripts/measure_AUC.lua $KNN_PBF_RESULT/test.txt
+$APRIL_EXEC ./scripts/measure_AUC.lua $KNN_DS_RESULT/test.txt
+$APRIL_EXEC ./scripts/measure_AUC.lua $KNN_PBF_RESULT/test.txt $KNN_DS_RESULT/test.txt
