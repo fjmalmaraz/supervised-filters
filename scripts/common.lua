@@ -22,6 +22,9 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 ]]
+local xe = require 'xemsg'
+xe.NN_POLLIN = 1
+xe.NN_POLLOUT = 1
 
 local common = {}
 

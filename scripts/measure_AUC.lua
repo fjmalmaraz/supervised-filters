@@ -1,3 +1,7 @@
+local xe = require 'xemsg'
+xe.NN_POLLIN = 1
+xe.NN_POLLOUT = 1
+
 local px = require "parxe"
 
 local predicted1 = assert(arg[1], "Needs a CSV predicted file as first argument")
@@ -6,7 +10,7 @@ local test_csv = arg[3] or "answer_key.csv"
 if predicted2 == "nil" then predicted2 = nil end
 if test_csv == "nil" then test_csv = nil end
 
-local SUBJECTS = {"Dog_1","Dog_2","Dog_3","Dog_4","Dog_5","Patient_1","Patient_2"}
+local SUBJECTS = {"Dog_1","Dog_5"}
 local REPETITIONS = 1000
 local seed  = 987654
 local ratio = 0.6 -- test ratio (validation is 1 - ratio)
