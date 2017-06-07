@@ -10,7 +10,7 @@ local test_csv = arg[3] or "answer_key.csv"
 if predicted2 == "nil" then predicted2 = nil end
 if test_csv == "nil" then test_csv = nil end
 
-local SUBJECTS = {"Dog_1","Dog_5"}
+local SUBJECTS = {"Dog_1","Dog_2","Dog_3","Dog_4","Dog_5","Patient_1","Patient_2"}
 local REPETITIONS = 1000
 local seed  = 987654
 local ratio = 0.6 -- test ratio (validation is 1 - ratio)
