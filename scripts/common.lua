@@ -234,7 +234,7 @@ function common.train_with_crossvalidation(list_names, all_train_data, params,
     local va_nump = va_data.input_dataset:numPatterns()
     print("# TR nump = ", tr_nump)
     print("# VA nump = ", va_nump)
-    # assert(tr_nump+va_nump == nump)
+    -- assert(tr_nump+va_nump == nump)
     -- TRAIN
     local args = { train_func(tr_data, va_data) }
     -- VALIDATE
@@ -303,7 +303,7 @@ function common.load_matlab_file(filename)
       local hz = assert( tbl.sampling_frequency:get(1,1) )
       local seq = tbl.sequence
       if seq then seq = seq:get(1,1) end
-      local m = assert( tbl.data:to_float() )
+      local m = assert( tbl.data:convert_to("float"))
       return m,hz,m:dim(1),seq or -1
                          end,
     debug.traceback)

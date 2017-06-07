@@ -151,3 +151,4 @@ git clone https://github.com/april-org/parxe.git
 
 cd parxe &&
 sudo cp -R parxe /usr/local/lib/lua/5.2/
+cd $ROOT_PATH
